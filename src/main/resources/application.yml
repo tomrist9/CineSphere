@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 7787
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  jpa:
+    hibernate:
+      ddl-auto: none  # You can use "update", "create", "create-drop", or "none"
+    show-sql: true # Set to true to log SQL statements
+
+# Additional Configuration (if needed)
+server:
+  port: 8080
+
+  security:
+
+      name: user
+      password: A9#p2L$y8z!
+      roles: USER
+
+movie:
+  json:
+    file:
+      classpath:favouriteslist.json
+
+
+
+
+
+
+
