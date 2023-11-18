@@ -12,6 +12,6 @@ ACTIVE_PROFILE: dev
 #Email Config
 EMAIL_HOST: smtp.gmail.com
 EMAIL_PORT: 587
-EMAIL_ID: <YOUR EMAIL ADDRESS>
-EMAIL_PASSWORD: <YOUR PASSWORD>
+EMAIL_ID: raminqehramanzade146@gmail.com
+EMAIL_PASSWORD: almvfwsjwlgtzdea
 VERIFY_EMAIL_HOST: http://localhost:${SERVER_PORT}

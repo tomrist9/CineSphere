@@ -4,6 +4,7 @@ import com.example.springmailsender.model.Confirmation;
 import com.example.springmailsender.model.User;
 import com.example.springmailsender.repository.ConfirmationRepository;
 import com.example.springmailsender.repository.UserRepository;
+import com.example.springmailsender.service.EmailService;
 import com.example.springmailsender.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ConfirmationRepository confirmationRepository;
+    private final EmailService emailService;
 
     @Override
     public User saveUser(User user) {
@@ -23,7 +25,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         Confirmation confirmation = new Confirmation(user);
         confirmationRepository.save(confirmation);
-        /* TODO Send email to user with token */
+        emailService.sendHtmlEmail(user.getName(),user.getEmail(),confirmation.getToken());
         return user;
     }
 
